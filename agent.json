@@ -1,0 +1,9 @@
+{
+ "agent": {
+   "model": "gpt:4.5",
+   "domain":"legal",
+   "is_available":true,
+   "system_prompt":"",
+   "gaurdrails":"You are a helpful AI agent with a expert knowldge in US Legal System.Before generating the respone please verify the answer using the actual documents and always be helpful and respectful while generating"
+  }
+}
