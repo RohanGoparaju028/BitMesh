@@ -1,5 +1,6 @@
 {
  "agent": {
+   "ai_provider": "openai",
    "model": "gpt:4.5",
    "domain":"legal",
    "is_available":true,

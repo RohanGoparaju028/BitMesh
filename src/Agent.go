@@ -12,6 +12,7 @@ type Config struct {
 	Agent Agent `json:"agent"`
 }
 type Agent struct {
+	AI_Provider string `json:"ai_provider"`
 	Model        string `json:"model"`
 	Domain       string `json:"domain"`
 	IsAvailable  bool   `json:"is_available"`
@@ -45,6 +46,7 @@ func ParseAgent() *Agent {
 			return nil
 		}
 		agent = &config.Agent
+		fmt.Println("Ai Provider:", agent.AI_Provider)
 		fmt.Println("Model:", agent.Model)
 		fmt.Println("Domain:", agent.Domain)
 		fmt.Println("Available:", agent.IsAvailable)
@@ -52,4 +54,18 @@ func ParseAgent() *Agent {
 		fmt.Println("Guardrails:", agent.Gaurdrails)
 		return agent
 	}
+}
+
+func CreateAgent(agent *Agent) {
+ if agent == nil {
+   log.Fatal("To create a angent define the agent information in the agent.json file ");
+   return;
+ }
+ if agent.AI_Provider == "openai" {
+	 fmt.Println("AI agent provider is open ai");
+ } else if agent.AI_Provider == "antropic" {
+	 fmt.Println("Ai agent provider is antropic");
+ } else if agent.AI_Provider == "gemini" {
+	 fmt.Println("AI agent provided by google");
+ }
 }
